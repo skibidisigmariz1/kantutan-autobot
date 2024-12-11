@@ -8,7 +8,7 @@
   <style>
     body {
       padding: 20px;
-      background-color: #001f3f; /* Dark blue background */
+      background-color: #0e0e0e;
       font-family: 'Poppins', sans-serif;
       color: #fff;
       margin: 0;
@@ -17,7 +17,7 @@
     .container {
       max-width: 600px;
       margin: 20px auto;
-      background-color: rgba(0, 51, 102, 0.8); /* Blueish background */
+      background-color: rgba(26, 26, 26, 0.8);
       border-radius: 10px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 6px 6px rgba(0, 0, 0, 0.23);
       padding: 40px;
@@ -25,13 +25,13 @@
     }
 
     h1, h2 {
-      color: #00bfff; /* Bright blue for headings */
+      color: #fff;
       text-align: center;
       margin: 0 0 20px;
     }
 
     .version {
-      color: #ffcc00; /* Yellow for version */
+      color: red;
       font-size: 0.8rem;
       position: absolute;
       top: 10px;
@@ -39,7 +39,7 @@
     }
 
     .guide-button {
-      background-color: #005f99; /* Darker blue */
+      background-color: #202023;
       border: 2px solid transparent;
       color: white;
       padding: 12px 24px;
@@ -55,7 +55,7 @@
 
     .guide-button:hover {
       color: #000;
-      background-color: #00bfff; /* Bright blue on hover */
+      background-color: #fff;
       border-color: #808070;
       transform: scale(1.05);
       animation: pulse 1s infinite;
@@ -99,13 +99,13 @@
     }
 
     .centered-textarea:focus, .centered-input:focus {
-      border-color: #00bfff; /* Bright blue focus */
+      border-color: violet;
     }
 
     .btn-primary {
-      background-color: #007bff; /* Bootstrap primary blue */
+      background-color: #808080;
       border: none;
-      color: #fff;
+      color: #FF0000;
       padding: 12px 24px;
       font-size: 1rem;
       cursor: pointer;
@@ -116,7 +116,7 @@
     }
 
     .btn-primary:hover {
-      background-color: #0056b3; /* Darker blue on hover */
+      background-color: #707070;
     }
 
     .footer {
@@ -124,12 +124,12 @@
       padding: 10px;
       text-align: center;
       font-size: 16px;
-      color: #ffcc00; /* Yellow for footer */
-      border-top: 1px solid #ffcc00;
+      color: red;
+      border-top: 1px solid red;
       position: fixed;
       bottom: 0;
       left: 0;
- width: 100%;
+      width: 100%;
     }
 
     .footer p {
@@ -149,7 +149,7 @@
     }
 
     .modal-content {
-      background-color: #003366; /* Darker blue for modal */
+      background-color: #333;
       margin: 10% auto;
       padding: 20px;
       border: 1px solid #888;
@@ -166,13 +166,13 @@
     }
 
     .close:hover, .close:focus {
-      color: #fff; /* White on hover */
+      color: #000;
       text-decoration: none;
       cursor: pointer;
     }
 
     .command-item, .session-item {
-      background-color: rgba(0, 51, 102, 0.6); /* Lighter blue for items */
+      background-color: rgba(0, 0, 0, 0.6);
       border: 1px solid #444;
       border-radius: 5px;
       padding: 10px;
@@ -187,7 +187,7 @@
     .command-name, .session-name {
       font-size: 1.2rem;
       font-weight: 600;
-      color: #00bfff; /* Bright blue for command names */
+      color: #00f;
     }
 
     .command-description, .session-description {
@@ -202,9 +202,9 @@
     }
 
     .pagination button {
-      background-color: #005f99; /* Darker blue for pagination buttons */
+      background-color: #000;
       border: none;
-      color: #fff;
+      color: #FF0000;
       padding: 10px 20px;
       font-size: 1rem;
       cursor: pointer;
@@ -213,7 +213,7 @@
     }
 
     .pagination button:hover {
-      background-color: #00bfff; /* Bright blue on hover */
+      background-color: #707070;
     }
 
     .pagination button:disabled {
@@ -236,14 +236,14 @@
 </head>
 <body>
   <main class="container">
-    <h1>Welcome to the AUTOBOT</h1>
+    <h1>Welcome to the AUTOBOT SITE</h1>
     <span class="version">version 2.2</span>
     <a href="#" class="guide-button" id="toggleGuide">Show Guide</a>
     
     <div id="guideSection" class="guide-section">
       <div class="guide-header">Guide</div>
       <div class="guide-content">
-        <p>Follow these steps to use AUTOBOT:</p>
+        <p>Follow these steps to use SITE:</p>
         <ol>
           <li>
             <strong>Obtain your App State:</strong> Go to kiwi browser and log in to your Facebook account. and go to c3c on extension and copy the appstate. 
@@ -266,10 +266,11 @@
     
     <div class="form-container">
       <form id="loginForm" class="login-form">
-        <label for="botState">Appstate:</label>
+        <label for="botState">Bot State:</label>
         <textarea id="botState" class="centered-textarea" placeholder="Paste your Facebook app state here..." required></textarea>
 
-        < input type="text" id="prefix" class="centered-input" placeholder="Enter command prefix..." required>
+        <label for="prefix">Prefix: (example: /)</label>
+        <input type="text" id="prefix" class="centered-input" placeholder="Enter command prefix..." required>
 
         <button type="submit" class="btn-primary">Login</button>
       </form>
@@ -283,17 +284,17 @@
         <h2>Commands</h2>
         <ul id="commands"></ul>
         <div class="pagination">
-          <button id="prevPage" disabled>&laquo; PREVIOUS</button>
-          <button id="nextPage">NEXT &raquo;</button>
+          <button id="prevPage" disabled>&laquo; Previous</button>
+          <button id="nextPage">Next &raquo</button>
         </div>
-        <h2 style="margin-top: 40px;">ACTIVE SEASONS</h2>
+        <h2 style="margin-top: 40px;">Active Sessions</h2>
         <ul id="sessionList"></ul>
       </div>
     </div>
   </main>
 
   <div class="footer">
-    <p>&copy; 2024 Mark All rights reserved.</p>
+    <p>&copy; 2024 Mark. All rights reserved.</p>
   </div>
 
   <script>
@@ -404,7 +405,7 @@
 
       prevPageButton.addEventListener('click', () => {
         currentPage--;
- displayCommands();
+        displayCommands();
       });
 
       nextPageButton.addEventListener('click', () => {
@@ -434,7 +435,7 @@
           const li = document.createElement('li');
           li.className = 'session-item';
           li.innerHTML = `
-            <div class="session-name">User ID: ${session.userID}</div>
+            <div class="session-name">UserID: ${session.userID}</div>
             <div class="session-description">Prefix: ${session.prefix}</div>
           `;
           sessionList.appendChild(li);

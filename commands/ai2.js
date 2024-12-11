@@ -2,7 +2,7 @@ const axios = require("axios");
 
 async function aic(q, uid) {
     try {
-        const response = await axios.get(`${global.NashBot.END}gpt4?prompt=${encodeURIComponent(q)}&uid=${uid}`);
+        const response = await axios.get(`https://kaiz-apis.gleeze.com/api/claude-sonnet-3.5?q=${encodeURIComponent(q)}&uid=${uid}`);
         return response.data.gpt4;
     } catch (error) {
         console.error("Error fetching data:", error.message);

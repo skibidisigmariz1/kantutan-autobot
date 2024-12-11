@@ -17,7 +17,7 @@ module.exports = {
 
         try {
             const response = await axios.get(`https://hercai.onrender.com/v3/hercai?question=${encodeURIComponent(input)}`);
-            const result = response.data.result.reply;
+            const result = response.data;
 
             if (!result) {
                 throw new Error('No valid response received from the API.');

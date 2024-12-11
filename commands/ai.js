@@ -16,7 +16,7 @@ module.exports = {
         api.sendMessage('Processing your request...', event.threadID, event.messageID);
 
         try {
-            const response = await axios.get(`https://kaiz-apis.gleeze.com/api/gpt-4o-pro?q=${encodeURIComponent(input)}uid=${uid}`);
+            const response = await axios.get(`https://hercai.onrender.com/v3/hercai?question=${encodeURIComponent(input)}`);
             const result = response.data.result.reply;
 
             if (!result) {
@@ -24,7 +24,7 @@ module.exports = {
             }
 
             api.sendMessage(
-                `🤖 AI Response\n━━━━━━━━━━━━━━━━━━━\n${result}`,
+                `${result}`,
                 event.threadID,
                 event.messageID
             );

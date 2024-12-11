@@ -2,7 +2,7 @@ const axios = require('axios');
 
 module.exports = {
     name: 'ai',
-    description: 'Interact with GPT-3.5 Turbo',
+    description: 'Interact with GPT4 Turbo',
     cooldown: 3,
     nashPrefix: false,
     execute: async (api, event, args) => {
@@ -16,7 +16,7 @@ module.exports = {
         api.sendMessage('Processing your request...', event.threadID, event.messageID);
 
         try {
-            const response = await axios.get(`${global.NashBot.END}new/gpt-3_5-turbo?prompt=${encodeURIComponent(input)}`);
+            const response = await axios.get(`https://kaiz-apis.gleeze.com/api/gpt-4o-pro?q=${encodeURIComponent(input)}uid=${uid}`);
             const result = response.data.result.reply;
 
             if (!result) {
